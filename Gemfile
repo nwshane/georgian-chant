@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Easy form creation
+gem 'formtastic', '~> 3.1', '>= 3.1.4'
+
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to get a debugger console
   gem 'pry-byebug', '~> 3.3'
@@ -44,7 +47,7 @@ group :test do
   gem 'rspec-rails', '3.5.0.beta4'
 
   # Acceptance testing
-  gem 'capybara', '~> 2.3.0'
+  gem 'capybara', '~> 2.7', '>= 2.7.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

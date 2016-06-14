@@ -1,0 +1,9 @@
+<%= semantic_form_for @chant do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title, label: 'სათაური' %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, label: 'საგალობელი შექმნი' %>
+  <% end %>
+<% end %>
