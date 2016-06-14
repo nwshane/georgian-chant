@@ -1,0 +1,27 @@
+# Bundle caching source: http://bradgessler.com/articles/docker-bundler/
+
+version: '2'
+services:
+  db:
+    image: postgres:9.4.1
+    ports:
+      - "5432:5432"
+  web:
+    build: .
+    command: bin/rails server --port 3000 --binding 0.0.0.0
+    ports:
+      - "3000:3000"
+    links:
+      - db
+    volumes:
+      - .:/myapp
+    volumes_from:
+      - bundle
+  bundle:
+    # 'image' will vary depending on your docker-compose
+    # project name. You may need to run `docker-compose build web`
+    # before this works.
+    image: georgianchant_web
+    command: echo "Look at me, I'm a bundle container!"
+    volumes:
+      - /bundle
