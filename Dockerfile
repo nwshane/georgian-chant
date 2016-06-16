@@ -21,8 +21,9 @@ RUN apt-get install -y nodejs
 # docker-compose run web rake
 ENTRYPOINT ["bundle", "exec"]
 
-# Make it easy to bundle exec with alias 'be'
-RUN echo 'alias be="bundle exec"' >> ~/.bashrc
+# Make it possible to run rspec, rake, bundle, etc. from a shell session
+# in the container without prepending bundle exec
+ENV PATH $APP_HOME/bin:$PATH
 
 # Copy files last so that if files have changed, the other build steps
 # will not be invalidated and can still use the cache.
