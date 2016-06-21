@@ -20,13 +20,9 @@ RUN apt-get update -qq \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/
 
-# Make it possible to run rake like this:
-# docker-compose run web rake
-ENTRYPOINT ["bundle", "exec"]
-
 # Make it possible to run rspec, rake, bundle, etc. from a shell session
 # in the container without prepending bundle exec
-ENV PATH $APP_HOME/bin:$PATH
+ENV PATH $PATH:$APP_HOME/bin
 
 # Copy files last so that if files have changed, the other build steps
 # will not be invalidated and can still use the cache.
