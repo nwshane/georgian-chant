@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Chant do
   let(:chant) { FactoryGirl.build(:chant) }
+
   context 'with minimum required attributes' do
     it 'is valid' do
       chant.valid?
