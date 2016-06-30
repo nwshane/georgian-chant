@@ -12,7 +12,7 @@ describe Chant do
   end
 
   describe '#title' do
-    it 'presence is required' do
+    it 'presence is validated' do
       chant.title = nil
 
       chant.valid?
