@@ -10,11 +10,13 @@ describe Chant do
     end
   end
 
-  it 'requires a title' do
-    chant.title = nil
+  describe '#title' do
+    it 'presence is required' do
+      chant.title = nil
 
-    chant.valid?
+      chant.valid?
 
-    expect(chant.errors[:title].length).to eq(1)
+      expect(chant.errors[:title].length).to eq(1)
+    end
   end
 end
