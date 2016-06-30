@@ -17,6 +17,8 @@ RUN apt-get update -qq \
       build-essential \
       libpq-dev \
       nodejs \
+# Remove git so that messing with git repo is not possible in container
+    && apt-get remove -y git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/
 
