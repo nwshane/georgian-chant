@@ -12,8 +12,16 @@ describe Chant do
   end
 
   describe '#title' do
-    it 'presence is validated' do
+    it 'validates presence' do
       chant.title = nil
+
+      chant.valid?
+
+      expect(chant.errors[:title].length).to eq(1)
+    end
+
+    it 'validates uniqueness' do
+      FactoryGirl.create(:chant, title: chant.title)
 
       chant.valid?
 
