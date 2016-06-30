@@ -48,6 +48,9 @@ group :test do
 
   # Acceptance testing
   gem 'capybara', '~> 2.7', '>= 2.7.1'
+
+  # Creation of fake data
+  gem 'factory_girl', '~> 4.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
