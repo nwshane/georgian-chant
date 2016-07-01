@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :chant do
-    title 'შენ ხარ ვენახი'
+    sequence(:title) { |x| "საგალობელი#{x}" }
   end
 end

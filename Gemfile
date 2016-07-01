@@ -51,6 +51,9 @@ group :test do
 
   # Creation of fake data
   gem 'factory_girl', '~> 4.7'
+
+  # Gives access to assigns(:instance_variable) method
+  gem 'rails-controller-testing', '~> 0.1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
