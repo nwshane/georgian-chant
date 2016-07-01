@@ -17,4 +17,18 @@ describe ChantsController do
       expect(assigns(:chants)).to eq([chant, chant2])
     end
   end
+
+  describe 'GET new' do
+    it 'renders the new template' do
+      get :new
+
+      expect(response).to render_template(:new)
+    end
+
+    it 'assigns a new chant to @chant' do
+      get :new
+
+      expect(assigns(:chant)).to be_a_new(Chant)
+    end
+  end
 end
